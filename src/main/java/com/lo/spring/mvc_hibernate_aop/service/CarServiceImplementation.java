@@ -31,4 +31,10 @@ public class CarServiceImplementation implements CarService{
     public Car getCar(int id) {
         return carDAO.getCar(id);
     }
+
+    @Override
+    @Transactional
+    public void deleteCar(int id) {
+        carDAO.deleteCar(id);
+    }
 }

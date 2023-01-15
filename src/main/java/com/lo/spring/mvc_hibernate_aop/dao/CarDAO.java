@@ -10,4 +10,6 @@ public interface CarDAO {
     public void saveCar(Car car);
 
     public Car getCar(int id);
+
+    public void deleteCar(int id);
 }

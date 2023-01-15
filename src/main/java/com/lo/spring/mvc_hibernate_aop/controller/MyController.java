@@ -55,6 +55,13 @@ public class MyController {
         return "adding-employee-view";
     }
 
+    @RequestMapping("/deleteEmployee")
+    public String deleteEmployee(@RequestParam("empId") int id){
+        employeeService.deleteEmployee(id);
+
+        return "redirect:/";
+    }
+
     @RequestMapping("/cars")
     public String showAllCars(Model model){
         List<Car> allCars = carService.getAllCars();
@@ -84,5 +91,12 @@ public class MyController {
         model.addAttribute("car", car);
 
         return "adding-car-view";
+    }
+
+    @RequestMapping("/deleteCar")
+    public String deleteCar(@RequestParam("carId") int id){
+        carService.deleteCar(id);
+
+        return "redirect:/cars";
     }
 }

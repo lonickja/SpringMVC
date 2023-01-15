@@ -18,6 +18,10 @@
             <c:param name="carId" value="${car.id}"/>
         </c:url>
 
+        <c:url var="deleteButton" value="/deleteCar">
+            <c:param name="carId" value="${car.id}"/>
+        </c:url>
+
         <tr>
             <td>${car.brand}</td>
             <td>${car.ph}</td>
@@ -25,6 +29,10 @@
             <td>
                 <input type="button" value="Update"
                        onclick="window.location.href='${updateButton}'"/>
+            </td>
+            <td>
+                <input type="button" value="Delete"
+                       onclick="window.location.href='${deleteButton}'"/>
             </td>
         </tr>
     </c:forEach>
